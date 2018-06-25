@@ -197,11 +197,14 @@
         ;
         let product;*/
 
+        const ROWS = 3;
+        const COLUMNS = 4;
+
         let selectedField;
 
         let fields = [];
         let number = 0;
-        while (number < 6) {
+        while (number < ROWS * COLUMNS) {
             let fieldId = "theField" + number;
             let field = {
                 id: fieldId,
@@ -216,12 +219,12 @@
         function createGameTable() {
             let gameTableOjjektum = document.getElementById('gameTable');
             let row = 0;
-            while (row < 3) {
+            while (row < ROWS) {
                 let rowElement = document.createElement("TR");
 
                 let column = 0;
-                while (column < 2) {
-                    let index = row * 2 + column;
+                while (column < COLUMNS) {
+                    let index = row * COLUMNS + column;
 
                     let columnElement = document.createElement("TD");
                     columnElement.className = "tableD";
