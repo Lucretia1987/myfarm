@@ -213,6 +213,41 @@
             
         }
 
+        function createGameTable() {
+            let gameTableOjjektum = document.getElementById('gameTable');
+            let row = 0;
+            while (row < 3) {
+                let rowElement = document.createElement("TR");
+
+                let column = 0;
+                while (column < 2) {
+                    let index = row * 2 + column;
+
+                    let columnElement = document.createElement("TD");
+                    columnElement.className = "tableD";
+                    let columnDivElement = document.createElement("DIV");
+
+                    columnDivElement.addEventListener("click", 
+                        function() {
+                           buttonVisibility(fields[index]);
+                        }
+                    );
+
+                    let columnImgElement = document.createElement("IMG");
+                    columnImgElement.id = "theField" + index;
+                    columnImgElement.src = "emptyfield.png";
+                    columnImgElement.className = "field";
+                    columnDivElement.appendChild(columnImgElement);
+                    columnElement.appendChild(columnDivElement);
+                    rowElement.appendChild(columnElement);
+                    column = column + 1;
+                }
+
+                gameTableOjjektum.appendChild(rowElement);
+                row = row + 1;
+            }
+        }
+
         function buttonVisibility(p_selectedField) {
             selectedField = p_selectedField;
             if (selectedField.state === "empty") {
@@ -299,7 +334,7 @@
 
 </head>
 
-<body>
+<body onload="createGameTable();">
     <div id="bgr">
         <img src="field.jpg" class="background" ;>
         <div class="moneyS">Money</div>
@@ -314,43 +349,8 @@
             <option>corn</option>
 
         </select>
-        <table class="table">
-            <tr>
-                <td class="tableD">
-                    <div onclick="buttonVisibility(fields[0])">
-                        <img id="theField0" class="field" src="emptyfield.png">
-                    </div>
-                </td>
-                <td class="tableD">
-                    <div onclick="buttonVisibility(fields[1])">
-                        <img id="theField1" class="field" src="emptyfield.png">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tableD">
-                    <div onclick="buttonVisibility(fields[2])">
-                        <img id="theField2" class="field" src="emptyfield.png">
-                    </div>
-                </td>
-                <td class="tableD">
-                    <div onclick="buttonVisibility(fields[3])">
-                        <img id="theField3" class="field" src="emptyfield.png">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="tableD">
-                    <div onclick="buttonVisibility(fields[4])">
-                        <img id="theField4" class="field" src="emptyfield.png">
-                    </div>
-                </td>
-                <td class="tableD">
-                    <div onclick="buttonVisibility(fields[5])">
-                        <img id="theField5" class="field" src="emptyfield.png">
-                    </div>
-                </td>
-            </tr>
+        <table class="table" id="gameTable">
+          
         </table>
 
         <button class="sellSelect" onclick="moneyRegister()">sell</button>
@@ -362,5 +362,4 @@
     </div>
 
 </body>
-
 </html>
