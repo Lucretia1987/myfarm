@@ -199,74 +199,19 @@
 
         let selectedField;
 
-        /*let field1 = {
-            id: "theField",
-            state: "empty",
-            product: ""
-        };
-
-        let field2 = {
-            id: "theField2",
-            state: "empty",
-            product: ""
+        let fields = [];
+        let number = 0;
+        while (number < 6) {
+            let fieldId = "theField" + number;
+            let field = {
+                id: fieldId,
+                state: "empty",
+                product: ""
+            };
+            fields.push(field);
+            number = number + 1;
+            
         }
-
-        let field3 = {
-            id: "theField3",
-            state: "empty",
-            product: ""
-        }
-
-        let field4 = {
-            id: "theField4",
-            state: "empty",
-            product: ""
-        }
-
-        let field5 = {
-            id: "theField5",
-            state: "empty",
-            product: ""
-        }
-
-        let field6 = {
-            id: "theField6",
-            state: "empty",
-            product: ""
-        }*/
-
-        let fields = [
-            {
-                id: "theField",
-                state: "empty",
-                product: ""
-            },
-            {
-                id: "theField2",
-                state: "empty",
-                product: ""
-            },
-            {
-                id: "theField3",
-                state: "empty",
-                product: ""
-            },
-            {
-                id: "theField4",
-                state: "empty",
-                product: ""
-            },
-            {
-                id: "theField5",
-                state: "empty",
-                product: ""
-            },
-            {
-                id: "theField6",
-                state: "empty",
-                product: ""
-            }
-        ];
 
         function buttonVisibility(p_selectedField) {
             selectedField = p_selectedField;
@@ -373,36 +318,36 @@
             <tr>
                 <td class="tableD">
                     <div onclick="buttonVisibility(fields[0])">
-                        <img id="theField" class="field" src="emptyfield.png">
+                        <img id="theField0" class="field" src="emptyfield.png">
                     </div>
                 </td>
                 <td class="tableD">
                     <div onclick="buttonVisibility(fields[1])">
-                        <img id="theField2" class="field" src="emptyfield.png">
+                        <img id="theField1" class="field" src="emptyfield.png">
                     </div>
                 </td>
             </tr>
             <tr>
                 <td class="tableD">
                     <div onclick="buttonVisibility(fields[2])">
-                        <img id="theField3" class="field" src="emptyfield.png">
+                        <img id="theField2" class="field" src="emptyfield.png">
                     </div>
                 </td>
                 <td class="tableD">
                     <div onclick="buttonVisibility(fields[3])">
-                        <img id="theField4" class="field" src="emptyfield.png">
+                        <img id="theField3" class="field" src="emptyfield.png">
                     </div>
                 </td>
             </tr>
             <tr>
                 <td class="tableD">
                     <div onclick="buttonVisibility(fields[4])">
-                        <img id="theField5" class="field" src="emptyfield.png">
+                        <img id="theField4" class="field" src="emptyfield.png">
                     </div>
                 </td>
                 <td class="tableD">
                     <div onclick="buttonVisibility(fields[5])">
-                        <img id="theField6" class="field" src="emptyfield.png">
+                        <img id="theField5" class="field" src="emptyfield.png">
                     </div>
                 </td>
             </tr>
